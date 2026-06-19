@@ -1,4 +1,4 @@
-# Milk Pasteurization Plant — Industrial Automation Project
+# Milk Pasteurization Plant - Industrial Automation Project
 
 A simulated industrial control system for a six-stage milk pasteurization 
 process, built to demonstrate PLC programming, HMI development, and 
