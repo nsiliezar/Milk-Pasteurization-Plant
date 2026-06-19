@@ -13,16 +13,16 @@ all layers.
 
 This project was built with the help of Claude AI (Anthropic). Claude 
 provided the domain knowledge of how a real milk pasteurization plant is 
-structured and sequenced - knowledge I didn't have starting out - and 
+structured and sequenced, knowledge I didn't have starting out, and 
 co-wrote a significant portion of the structured text process control logic. 
 I directed the architecture, built and wired the OpenPLC/Node-RED/Modbus 
-integration myself, debugged every connection issue hands-on, and validated 
-the system end-to-end through hardware-in-the-loop style testing.
+integration myself, debugged every connection issue hands on, and validated 
+the system end to end through hardware in the loop style testing.
 
 I'm including this for transparency: AI-assisted development is increasingly 
 part of real engineering workflows, and I think how you use a tool like this 
-well - to learn unfamiliar domains and accelerate implementation while still 
-owning the integration and validation - is itself a relevant skill.
+well to learn unfamiliar domains and accelerate implementation while still 
+owning the integration and validation.
 
 ## Architecture
 
@@ -57,30 +57,30 @@ inputs, and registers) to drive the live dashboard.
 
 The control program simulates a six-stage milk pasteurization process:
 
-1. **Reception** — Milk tanker arrival is detected, inlet valve opens, 
+1. **Reception** - Milk tanker arrival is detected, inlet valve opens, 
    and the reception pump transfers milk into one of two raw storage 
    tanks (T01 / T02), selectable via a tank selector switch.
 
-2. **Storage & Agitation** — Each storage tank runs an agitator whenever 
+2. **Storage & Agitation** - Each storage tank runs an agitator whenever 
    milk is present, keeping the product homogenized while awaiting 
    processing.
 
-3. **Pre-Heating** — Milk is transferred to a balance tank, then a 
+3. **Pre-Heating** - Milk is transferred to a balance tank, then a 
    booster pump feeds it through a pre-heater. A hot water valve 
    modulates to bring the milk to setpoint (40°C) before entering the 
    pasteurizer.
 
-4. **Pasteurization (HTST)** — The pre-heated milk passes through the 
-   High-Temperature Short-Time pasteurizer. A heating valve raises the 
+4. **Pasteurization (HTST)** - The pre-heated milk passes through the 
+   High-Temperature Short Time pasteurizer. A heating valve raises the 
    product to 72°C, and a hold timer ensures the milk stays at 
    temperature for the required hold time. If temperature drops below 
    setpoint, a divert valve redirects the batch away from packaging.
 
-5. **Cooling & Storage** — Pasteurized milk is cooled via a chilled 
+5. **Cooling & Storage** - Pasteurized milk is cooled via a chilled 
    water valve and stored in tank T03, monitored for high/low level 
    and temperature.
 
-6. **CIP (Clean-In-Place)** — A multi-step automated cleaning sequence 
+6. **CIP (Clean-In-Place)** - A multi-step automated cleaning sequence 
    (rinse → caustic wash → acid wash → final rinse) that can be 
    triggered between batches to clean the process lines.
 
@@ -116,20 +116,20 @@ real time.
 **What this confirms:**
 - The ladder logic and structured text compile and run without errors
 - Modbus TCP/IP communication is correctly configured and functional 
-  end-to-end between HMI and PLC
+  end to end between HMI and PLC
 - Variable addressing and memory mapping are correct
 
 **What has not been validated:**
-The full six-stage process - including temperature-driven transitions, 
-hold-time logic, and batch logging - requires live temperature input to 
+The full six-stage process, including temperature driven transitions, 
+hold time logic, and batch logging requires live temperature input to 
 execute. Without physical temperature sensors connected to the Raspberry 
 Pi, these analog inputs remain at zero, so process stages that depend on 
 temperature thresholds (pre-heat, pasteurization, cooling) cannot 
 currently progress through a full batch cycle.
 
-The program is built and ready to run as-is once physical I/O (temperature 
+The program is built and ready to run as is once physical I/O (temperature 
 transmitters, flow sensors, and level switches) is connected. No code 
-changes are expected to be necessary - only the addition of real input 
+changes are expected to be necessary. Only the addition of real input 
 signals.
 
 ## Repository Structure
@@ -145,8 +145,8 @@ Milk-Pasteurization-Plant/
 ## What I Learned
 
 This project took me through the full lifecycle of building a real PLC 
-control system from scratch - not a tutorial exercise, but an original 
-process I designed, programmed, wired together, and debugged end-to-end.
+control system from scratch. not a tutorial exercise, but an original 
+process I designed, programmed, wired together, and debugged end to end.
 
 **Resources I used to get here:**
 - *PLC Programming with the Raspberry Pi and the OpenPLC Project* (book) — 
