@@ -111,7 +111,8 @@ Throughout all stages, the system includes:
 ### Tank Level Test Program - Variable Table
 ![Tank levelvariable table](openplc/variable-table/TankLevel_variable_table_full.png)
 ### Node-RED HMI Dashboard
-![Node-Red HMI Dashboard](node-red/flows/Node-RED Dashboard.pdf)
+[View Node-RED HMI Dashboard (PDF)](node-red/flows/Node-RED_Dashboard.pdf)
+
 ## Testing Methodology
 
 The control program was compiled without errors and successfully deployed 
