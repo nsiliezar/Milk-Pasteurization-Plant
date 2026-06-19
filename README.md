@@ -145,7 +145,7 @@ Milk-Pasteurization-Plant/
 ## What I Learned
 
 This project took me through the full lifecycle of building a real PLC 
-control system from scratch — not a tutorial exercise, but an original 
+control system from scratch - not a tutorial exercise, but an original 
 process I designed, programmed, wired together, and debugged end-to-end.
 
 **Resources I used to get here:**
@@ -185,8 +185,8 @@ process I designed, programmed, wired together, and debugged end-to-end.
 **The bigger takeaway:**
 Beyond any single technical skill, this project taught me what it actually 
 takes to carry something from an idea through to a working system. Almost 
-nothing worked on the first attempt — wrong Modbus addresses, address 
-conflicts, compiler errors, connection failures — and the project only 
+nothing worked on the first attempt; wrong Modbus addresses, address 
+conflicts, compiler errors, connection failures. The project only 
 moved forward because I kept isolating each problem, testing one change 
 at a time, and verifying it before moving to the next. That habit of 
 working a problem systematically until it's actually solved, rather than 
