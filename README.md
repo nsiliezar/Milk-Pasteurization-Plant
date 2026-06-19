@@ -105,17 +105,13 @@ Throughout all stages, the system includes:
 - ## Screenshots
 
 ### Ladder Logic - Full Control Program
-![Ladder Diagram](docs/screenshots/ladder_diagram_full.png)
-
+openplc/ladder-logic/milk Pasteurization plan ladder_diagram_full.png
 ### Process Control - Variable Table
-![Process Control Variables](docs/screenshots/ProcessControl_variable_table.png)
-
+openplc/variable-table/ProcessControl_variable_table_full.png
 ### Tank Level Test Program - Variable Table
-![Tank Level Variables](docs/screenshots/TankLevel_variable_table.png)
-
+openplc/variable-table/TankLevel_variable_table_full.png
 ### Node-RED HMI Dashboard
-![HMI Dashboard](docs/screenshots/NodeRED_HMI_dashboard.png)
-
+node-red/flows/Node-RED Dashboard.pdf
 ## Testing Methodology
 
 The control program was compiled without errors and successfully deployed 
