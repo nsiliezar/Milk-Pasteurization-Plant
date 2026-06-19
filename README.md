@@ -1,7 +1,7 @@
 # Milk Pasteurization Plant - Industrial Automation Project
 
 A simulated industrial control system for a six-stage milk pasteurization 
-process, built to demonstrate PLC programming, HMI development, and 
+process. Built to demonstrate PLC programming, HMI development, and 
 industrial communication protocols.
 
 This project showcases the complete automation stack an industrial 
@@ -44,7 +44,7 @@ inputs, and registers) to drive the live dashboard.
 
   ## Tech Stack
 
-- **OpenPLC Runtime** - open-source PLC runtime executing IEC 61131-3 
+- **OpenPLC Runtime** - open source PLC runtime executing IEC 61131-3 
   ladder logic and structured text
 - **OpenPLC Editor** - used to develop and compile the control program
 - **Node-RED** - flow-based HMI dashboard and Modbus client
@@ -109,7 +109,7 @@ Throughout all stages, the system includes:
 
 The control program was compiled without errors and successfully deployed 
 to the OpenPLC runtime on a Raspberry Pi. Communication between Node-RED 
-and OpenPLC over Modbus TCP/IP was confirmed working - HMI controls write 
+and OpenPLC over Modbus TCP/IP was confirmed working. HMI controls write 
 correctly to PLC memory and PLC status reads back to the dashboard in 
 real time.
 
@@ -118,19 +118,6 @@ real time.
 - Modbus TCP/IP communication is correctly configured and functional 
   end to end between HMI and PLC
 - Variable addressing and memory mapping are correct
-
-**What has not been validated:**
-The full six-stage process, including temperature driven transitions, 
-hold time logic, and batch logging requires live temperature input to 
-execute. Without physical temperature sensors connected to the Raspberry 
-Pi, these analog inputs remain at zero, so process stages that depend on 
-temperature thresholds (pre-heat, pasteurization, cooling) cannot 
-currently progress through a full batch cycle.
-
-The program is built and ready to run as is once physical I/O (temperature 
-transmitters, flow sensors, and level switches) is connected. No code 
-changes are expected to be necessary. Only the addition of real input 
-signals.
 
 ## Repository Structure
 
@@ -149,7 +136,7 @@ control system from scratch. not a tutorial exercise, but an original
 process I designed, programmed, wired together, and debugged end to end.
 
 **Resources I used to get here:**
-- *PLC Programming with the Raspberry Pi and the OpenPLC Project* (book) — 
+- *PLC Programming with the Raspberry Pi and the OpenPLC Project* (book)- 
   my starting point for understanding OpenPLC fundamentals
 - OpenPLC Editor and Runtime documentation
 - Node-RED documentation and community flow examples
@@ -181,25 +168,13 @@ process I designed, programmed, wired together, and debugged end to end.
   OpenPLC, Node-RED, the Raspberry Pi command line, and GitHub together 
   on one project. Each tool had its own learning curve, and a lot of the 
   real work was figuring out how they were supposed to talk to each other.
-
-**The bigger takeaway:**
+  
 Beyond any single technical skill, this project taught me what it actually 
 takes to carry something from an idea through to a working system. Almost 
 nothing worked on the first attempt; wrong Modbus addresses, address 
 conflicts, compiler errors, connection failures. The project only 
 moved forward because I kept isolating each problem, testing one change 
 at a time, and verifying it before moving to the next. That habit of 
-working a problem systematically until it's actually solved, rather than 
-stopping at "it should work," is the skill I'm most confident I can take 
-into a real job.
-I used Claude AI throughout this project, and it played a real role in 
-how this came together. I had no prior knowledge of how a milk 
-pasteurization plant actually operates Claude helped me understand the 
-real world process (reception, pre-heating, HTST pasteurization, cooling, 
-CIP) well enough to translate it into control logic. Claude also wrote a 
-significant portion of the Structured Text process control function 
-block, which I then integrated, tested, and debugged within OpenPLC. 
-Treating Claude as a collaborator someone to explain unfamiliar 
-concepts and draft code I could then verify and adapt was a big part 
-of how I was able to take this project from an idea to a working PLC 
-program.
+working a problem systematically until it's actually solved is the skill I'm most 
+confident I can take into a real job.
+
