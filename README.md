@@ -168,15 +168,14 @@ between systems.
   and being able to clearly state what was and wasn't proven through 
   testing
 
-**On working with Claude AI:**
 I used Claude AI throughout this project, and it played a real role in 
 how this came together. I had no prior knowledge of how a milk 
-pasteurization plant actually operates — Claude helped me understand the 
-real-world process (reception, pre-heating, HTST pasteurization, cooling, 
+pasteurization plant actually operates Claude helped me understand the 
+real world process (reception, pre-heating, HTST pasteurization, cooling, 
 CIP) well enough to translate it into control logic. Claude also wrote a 
 significant portion of the Structured Text process control function 
 block, which I then integrated, tested, and debugged within OpenPLC. 
-Treating Claude as a collaborator — someone to explain unfamiliar 
-concepts and draft code I could then verify and adapt — was a big part 
+Treating Claude as a collaborator someone to explain unfamiliar 
+concepts and draft code I could then verify and adapt was a big part 
 of how I was able to take this project from an idea to a working PLC 
 program.
