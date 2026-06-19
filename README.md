@@ -42,17 +42,6 @@ client reading and writing directly to OpenPLC's memory (coils, discrete
 
 inputs, and registers) to drive the live dashboard.
 
-## Tech Stack
-
-- **OpenPLC Runtime** - open-source PLC runtime executing IEC 61131-3 
-  ladder logic and structured text
-- **OpenPLC Editor** - used to develop and compile the control program
-- **Node-RED** - flow-based HMI dashboard and Modbus client
-- **Modbus TCP/IP** - industrial communication protocol linking HMI and PLC
-- **Raspberry Pi** - hardware host running the OpenPLC runtime
-- **IEC 61131-3 Structured Text** - used for the core process control 
-  function block (temperature control, CIP sequencing, alarm logic)
-
   ## Tech Stack
 
 - **OpenPLC Runtime** - open-source PLC runtime executing IEC 61131-3 
@@ -68,30 +57,30 @@ inputs, and registers) to drive the live dashboard.
 
 The control program simulates a six-stage milk pasteurization process:
 
-1. **Reception** - Milk tanker arrival is detected, inlet valve opens, 
+1. **Reception** — Milk tanker arrival is detected, inlet valve opens, 
    and the reception pump transfers milk into one of two raw storage 
    tanks (T01 / T02), selectable via a tank selector switch.
 
-2. **Storage & Agitation** - Each storage tank runs an agitator whenever 
+2. **Storage & Agitation** — Each storage tank runs an agitator whenever 
    milk is present, keeping the product homogenized while awaiting 
    processing.
 
-3. **Pre-Heating** - Milk is transferred to a balance tank, then a 
+3. **Pre-Heating** — Milk is transferred to a balance tank, then a 
    booster pump feeds it through a pre-heater. A hot water valve 
    modulates to bring the milk to setpoint (40°C) before entering the 
    pasteurizer.
 
-4. **Pasteurization (HTST)** - The pre-heated milk passes through the 
+4. **Pasteurization (HTST)** — The pre-heated milk passes through the 
    High-Temperature Short-Time pasteurizer. A heating valve raises the 
    product to 72°C, and a hold timer ensures the milk stays at 
    temperature for the required hold time. If temperature drops below 
    setpoint, a divert valve redirects the batch away from packaging.
 
-5. **Cooling & Storage** - Pasteurized milk is cooled via a chilled 
+5. **Cooling & Storage** — Pasteurized milk is cooled via a chilled 
    water valve and stored in tank T03, monitored for high/low level 
    and temperature.
 
-6. **CIP (Clean-In-Place)** - A multi-step automated cleaning sequence 
+6. **CIP (Clean-In-Place)** — A multi-step automated cleaning sequence 
    (rinse → caustic wash → acid wash → final rinse) that can be 
    triggered between batches to clean the process lines.
 
@@ -100,12 +89,15 @@ Throughout all stages, the system includes:
   mismatches, and timeout conditions
 - **Plant state machine** managing Startup → Running → Alarm → Stopped 
   transitions
-- **E-Stop logic** that immediately
+- **E-Stop logic** that immediately de-energizes all outputs
+- **Batch logging** recording timestamp, pasteurization temperatures, 
+  and pass/fail result for each batch
 
 - ## Screenshots
 
 ### Ladder Logic - Full Control Program
-![ladder logic](openplc/ladder-logic/milk Pasteurization plan ladder_diagram_full.png)
+![ladder Logic](openplc/ladder-logic/milk_Pasteurization_plant_ladder_diagram_full.png)
+
 ### Process Control - Variable Table
 ![Process Control variable table](openplc/variable-table/ProcessControl_variable_table_full.png)
 ### Tank Level Test Program - Variable Table
@@ -142,15 +134,13 @@ signals.
 
 ## Repository Structure
 
-milk-pasteurization-plc/
+Milk-Pasteurization-Plant/
 ├── README.md
-├── docs/
-│   └── screenshots/
-├── plc/
+├── docs/screenshots/
+├── openplc/
 │   ├── ladder-logic/
-│   └── structured-text/
-└── node-red/
-    └── flows/
+│   └── variable-table/
+└── node-red/flows/
 
     ## What I Learned
 
@@ -190,4 +180,3 @@ Treating Claude as a collaborator — someone to explain unfamiliar
 concepts and draft code I could then verify and adapt — was a big part 
 of how I was able to take this project from an idea to a working PLC 
 program.
-- 
