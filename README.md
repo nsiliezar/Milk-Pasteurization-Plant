@@ -13,7 +13,7 @@ all layers.
 
 This project was built with the help of Claude AI (Anthropic). Claude 
 provided the domain knowledge of how a real milk pasteurization plant is 
-structured and sequenced — knowledge I didn't have starting out — and 
+structured and sequenced - knowledge I didn't have starting out - and 
 co-wrote a significant portion of the structured text process control logic. 
 I directed the architecture, built and wired the OpenPLC/Node-RED/Modbus 
 integration myself, debugged every connection issue hands-on, and validated 
