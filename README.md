@@ -142,7 +142,7 @@ Milk-Pasteurization-Plant/
 │   └── variable-table/
 └── node-red/flows/
 
-    ## What I Learned
+## what I have learned
 
 This project took me through the full automation development lifecycle - 
 not just writing logic, but designing a process from scratch, structuring 
