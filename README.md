@@ -142,12 +142,22 @@ Milk-Pasteurization-Plant/
 │   └── variable-table/
 └── node-red/flows/
 
-## what I have learned
+## What I Learned
 
-This project took me through the full automation development lifecycle - 
-not just writing logic, but designing a process from scratch, structuring 
-a multi-stage control program, and debugging real communication issues 
-between systems.
+This project took me through the full lifecycle of building a real PLC 
+control system from scratch — not a tutorial exercise, but an original 
+process I designed, programmed, wired together, and debugged end-to-end.
+
+**Resources I used to get here:**
+- *PLC Programming with the Raspberry Pi and the OpenPLC Project* (book) — 
+  my starting point for understanding OpenPLC fundamentals
+- OpenPLC Editor and Runtime documentation
+- Node-RED documentation and community flow examples
+- Raspberry Pi command line (SSH, networking, file system navigation)
+- Claude AI - for domain knowledge and Structured Text drafting (see 
+  Acknowledgment above)
+- GitHub - learning how to structure and document a project for the 
+  first time
 
 **Key technical takeaways:**
 - **Modbus addressing conventions** - understanding how OpenPLC maps 
@@ -167,7 +177,21 @@ between systems.
 - **The difference between "code compiles" and "process is validated"** - 
   and being able to clearly state what was and wasn't proven through 
   testing
+- **Working across a full toolchain** - this was my first time using 
+  OpenPLC, Node-RED, the Raspberry Pi command line, and GitHub together 
+  on one project. Each tool had its own learning curve, and a lot of the 
+  real work was figuring out how they were supposed to talk to each other.
 
+**The bigger takeaway:**
+Beyond any single technical skill, this project taught me what it actually 
+takes to carry something from an idea through to a working system. Almost 
+nothing worked on the first attempt — wrong Modbus addresses, address 
+conflicts, compiler errors, connection failures — and the project only 
+moved forward because I kept isolating each problem, testing one change 
+at a time, and verifying it before moving to the next. That habit of 
+working a problem systematically until it's actually solved, rather than 
+stopping at "it should work," is the skill I'm most confident I can take 
+into a real job.
 I used Claude AI throughout this project, and it played a real role in 
 how this came together. I had no prior knowledge of how a milk 
 pasteurization plant actually operates Claude helped me understand the 
